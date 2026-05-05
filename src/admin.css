@@ -1,0 +1,245 @@
+.admin-page {
+  min-height: 100vh;
+}
+
+.admin-layout,
+.admin-login-view,
+.admin-dashboard-view {
+  min-height: 100vh;
+}
+
+.admin-login-view {
+  display: grid;
+  place-items: center;
+  width: min(100% - 2rem, 1180px);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.admin-auth-card,
+.dashboard-section,
+.dashboard-header,
+.dashboard-tools,
+.admin-sidebar {
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.admin-auth-card {
+  display: grid;
+  gap: 1.4rem;
+  width: min(100%, 30rem);
+  padding: clamp(1.2rem, 4vw, 2rem);
+}
+
+.admin-brand {
+  width: fit-content;
+}
+
+.admin-auth-card h1,
+.dashboard-header h1 {
+  font-size: clamp(2.1rem, 6vw, 4rem);
+  line-height: 1;
+}
+
+.admin-muted {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.login-form,
+.dashboard-tools,
+.media-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.login-form label,
+.dashboard-tools label,
+.admin-field {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 850;
+}
+
+.login-form input,
+.dashboard-tools input,
+.dashboard-tools select,
+.admin-field input,
+.admin-field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  font: inherit;
+  font-weight: 650;
+  outline: none;
+}
+
+.login-form input,
+.dashboard-tools input,
+.dashboard-tools select,
+.admin-field input {
+  min-height: 3rem;
+  padding: 0 0.9rem;
+}
+
+.admin-field textarea {
+  min-height: 5rem;
+  padding: 0.85rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.admin-error {
+  min-height: 1.3rem;
+  margin-bottom: 0;
+  color: #ff8a8a;
+  font-weight: 800;
+}
+
+.admin-dashboard-view {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 1rem;
+  width: min(100% - 2rem, 1440px);
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: calc(100vh - 2rem);
+  padding: 1rem;
+}
+
+.dashboard-tabs {
+  display: grid;
+  gap: 0.45rem;
+  overflow: auto;
+}
+
+.dashboard-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.8rem;
+  border: 1px solid transparent;
+  border-radius: 0.65rem;
+  padding: 0 0.8rem;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.dashboard-tab.active,
+.dashboard-tab:hover {
+  color: var(--text);
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--surface-strong) 64%, transparent);
+}
+
+.dashboard-main {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 1.6rem);
+}
+
+.dashboard-tools {
+  grid-template-columns: minmax(12rem, 0.35fr) minmax(15rem, 1fr);
+  padding: 1rem;
+}
+
+.dashboard-section {
+  padding: 1rem;
+}
+
+.compact-heading {
+  margin-bottom: 1rem;
+}
+
+.compact-heading h2 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.media-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard-form {
+  max-height: 55vh;
+  overflow: auto;
+  padding-right: 0.35rem;
+}
+
+.dashboard-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.save-status {
+  color: var(--accent);
+  font-weight: 850;
+}
+
+@media (max-width: 900px) {
+  .admin-dashboard-view {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .dashboard-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-header,
+  .dashboard-tools,
+  .media-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+}
+
+@media (max-width: 560px) {
+  .dashboard-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-actions .primary-button,
+  .dashboard-actions .secondary-button,
+  .admin-import {
+    width: 100%;
+  }
+}
