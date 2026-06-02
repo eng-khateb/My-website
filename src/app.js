@@ -24,7 +24,7 @@ const translations = {
       contact: 'Contact',
     },
     hero: {
-      eyebrow: 'Available in the UAE',
+      eyebrow: 'Available to work',
       title: 'Computer Engineer | IT Specialist',
       summary:
         'Computer engineer specialized in web development and programming, with a solid academic background and a passion for continuous learning. Analytical, detail-oriented, and motivated to create advanced digital solutions that align with business goals and deliver strong user experiences.',
